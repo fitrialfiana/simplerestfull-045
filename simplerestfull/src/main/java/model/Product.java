@@ -15,6 +15,7 @@ public class Product {
    private String id;
    //Variabel bertipe data string, dengan nama "id"
    private String name;
+   
 
    
    //Konstruktor untuk melakukan set dan get (ambil) data - bagian id dan nama productnya
@@ -29,6 +30,8 @@ public class Product {
    }
    public void setName(String name) {
       this.name = name;
-   }
+   } 
+   
+
     
 }

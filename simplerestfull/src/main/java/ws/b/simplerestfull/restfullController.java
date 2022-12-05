@@ -56,6 +56,10 @@ public class restfullController {
     //Fungsi Delete
     @RequestMapping(value = "/product/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Object> delete(@PathVariable("id") String id){
+        //Jika tidak ada id yang cocok / tidak ada data. Maka akan tampil "Product Not Found"
+        if(!productRepo.containsKey(id)) 
+            return new ResponseEntity<>("Product not found", HttpStatus.NOT_FOUND);//ProductNotfoundException();
+        //Jika id sesuai, akan dihapus
         productRepo.remove(id);
         //Mengembalikan nilai
         return new ResponseEntity<>("Product is deleted successfully", HttpStatus.OK);
@@ -65,6 +69,10 @@ public class restfullController {
     //Update or PUT data
     @RequestMapping(value = "/product/{id}", method = RequestMethod.PUT)
     public ResponseEntity<Object> updateProduct(@PathVariable("id") String id, @RequestBody Product product) {
+        //Jika tidak ada id yang cocok / tidak ada data. Maka akan tampil "Product Not Found"
+        if(!productRepo.containsKey(id)) 
+            return new ResponseEntity<>("Product not found", HttpStatus.NOT_FOUND);//ProductNotfoundException();
+        //Jika id sesuai, akan dihapus
         //menghapus isi data dari id sebelumnya
         productRepo.remove(id);
         //set idnya untuk perubahan
@@ -93,5 +101,6 @@ public class restfullController {
     }   
     
 }
+
 
    
