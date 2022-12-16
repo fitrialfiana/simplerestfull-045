@@ -35,19 +35,35 @@ public class restfullController {
         //Memasukkan secara static (2 id)
         //Membuat product bernama honey
         Product ayam = new Product();
+        
+       
         //Mengatur idnya "1"
         ayam.setId("1");
         //Mengatur namanya "Ayam Goreng"
         ayam.setName("Ayam Goreng");
+        //Mengatur harga
+        ayam.setPrice(4000);
+        //Mengatur jumlah
+        ayam.setNumber(2);
+        
+        ayam.setTotal();
+                        
+                
         //Memanggil
         productRepo.put(ayam.getId(), ayam);
         
         //Membuat product bernama almond
         Product ikan = new Product();
         //Mengatur idnya "2"
-        ikan.setId("2");
+        ikan.setId("2");        
         //Mengatur namanya "Honeey"
         ikan.setName("Ikan Bakar");
+        //Mengatur harga
+        ikan.setPrice(3000);
+        //Mengatur jumlah
+        ikan.setNumber(3);
+        ikan.setTotal();
+        
         //Memanggil
         productRepo.put(ikan.getId(), ikan);        
     }
