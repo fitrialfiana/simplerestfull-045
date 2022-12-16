@@ -15,6 +15,10 @@ public class Product {
    private String id;
    //Variabel bertipe data string, dengan nama "id"
    private String name;
+   //Variabel dengan nama price
+   private int price;
+   private int number;
+   private int total;
    
 
    
@@ -30,7 +34,34 @@ public class Product {
    }
    public void setName(String name) {
       this.name = name;
-   } 
+   }
+   
+   public int getPrice() {
+      return price;
+   }
+   public void setPrice(int price) {
+      this.price = price;
+   }
+   
+   public int getNumber() {
+      return number;
+   }
+   public void setNumber(int number) {
+      this.number = number;
+   }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal() {
+        //total = price * number;
+        this.total = price * number;
+    }
+   
+   
+
+   
    
 
     
